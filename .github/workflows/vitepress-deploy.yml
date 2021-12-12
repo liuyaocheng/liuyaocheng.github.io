@@ -28,6 +28,9 @@ jobs:
         with:
           version: 6.23.6
 
+      - name: set npm token
+        run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
