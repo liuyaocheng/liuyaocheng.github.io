@@ -1,6 +1,11 @@
-### 释晨的小屋
+---
+date: 2021-12-12
+title: readme
+---
 
-#### 架构
+# 释晨的小屋
+
+## 架构
 
 - vitepress
 - vite
@@ -11,15 +16,15 @@
 - vite-plugin-components
 - unplugin-auto-import/vite
 
-#### 本地开发
+## 本地开发
 
 - pnpm i
 - pnpm run dev
 
-#### 本地打包
+## 本地打包
 
 - pnpm run build
 
-#### 支持 github actions
+## 支持 github actions
 
 - 提交到 main 分支自动化打包
