@@ -23,21 +23,21 @@ jobs:
           # “最近更新时间” 等 git 日志相关信息，需要拉取全部提交记录
           fetch-depth: 0
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v1
-        with:
-          # 选择要使用的 node 版本
-          node-version: '16'
-
       - name: pnpm
         uses: pnpm/action-setup@v2.0.1
         with:
           version: 6.23.6
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          # 选择要使用的 node 版本
+          node-version: '16'
+          cache: 'pnpm'
+
       # 如果缓存没有命中，安装依赖
       - name: Install dependencies
-        if: steps.pnpm-cache.outputs.cache-hit != 'true'
-        run: pnpm i
+        run: pnpm install
 
       # 运行构建脚本
       - name: Build vitePress site
