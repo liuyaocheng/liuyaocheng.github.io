@@ -28,13 +28,11 @@ jobs:
         with:
           # 选择要使用的 node 版本
           node-version: '16'
-        run: node -v
 
       - name: pnpm
         uses: pnpm/action-setup@v2.0.1
         with:
           version: 6.23.6
-        run: pnpm -v
 
       # 缓存 node_modules
       - name: Cache dependencies
