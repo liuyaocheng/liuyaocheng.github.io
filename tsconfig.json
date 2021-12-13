@@ -1,9 +1,10 @@
 {
   "compilerOptions": {
+    "jsx": "preserve",
     "isolatedModules": true,
     "module": "ESNext",
     "baseUrl": ".",
-    "target": "es2016",
+    "target": "ESNext",
     "lib": ["DOM", "ESNext"],
     "strict": true,
     "esModuleInterop": true,
@@ -14,6 +15,9 @@
     "strictNullChecks": true,
     "forceConsistentCasingInFileNames": true,
     "typeRoots": ["node_modules/@types", "typings"],
+    "types": [
+      "vite/client",
+    ],
     "paths": {
       "@/": ["./"]
     }

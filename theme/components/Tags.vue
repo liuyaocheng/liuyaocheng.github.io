@@ -16,7 +16,7 @@ import { useRoute, useData } from 'vitepress'
 const tagToPages = ref([])
 const { theme } = useData()
 const pages = theme.value.pages
-const tags = new Set(pages.map(page => page.tags).flat())
+const tags = new Set<string>(pages.map(page => page.tags).flat())
 function handelTage(item: string) {
   tagToPages.value = pages.filter(page => page.tags?.includes(item))
 }

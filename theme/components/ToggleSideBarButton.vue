@@ -1,8 +1,3 @@
-<script lang="ts">
-export default {
-  emits: ['toggle'],
-}
-</script>
 
 <template>
   <div class="sidebar-button" @click="$emit('toggle')">
@@ -21,7 +16,11 @@ export default {
     </svg>
   </div>
 </template>
-
+<script lang="ts">
+export default {
+  emits: ['toggle'],
+}
+</script>
 <style>
 .sidebar-button {
   position: absolute;

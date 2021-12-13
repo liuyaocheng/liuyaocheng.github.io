@@ -1,6 +1,6 @@
 <template>
   <div class="docs w-5/6 m-auto">
-    <div v-for="(year, index) in data" :key="index + year" class="years">
+    <div v-for="(year, index) in data" :key="index + String(year)" class="years">
       <div class="year">
         {{ year[0].date.split("-")[0] }}
       </div>

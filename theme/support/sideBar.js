@@ -1,4 +1,4 @@
-import { isArray, ensureStartingSlash, removeExtention } from '../utils'
+import { isArray, isObject, ensureStartingSlash, removeExtention } from '../utils'
 export function isSideBarConfig(sidebar) {
   return sidebar === false || sidebar === 'auto' || isArray(sidebar)
 }
@@ -19,9 +19,11 @@ export function getSideBarConfig(sidebar, path) {
     return sidebar
 
   path = ensureStartingSlash(path)
-  for (const dir in sidebar) {
-    if (path.startsWith(ensureStartingSlash(dir)))
-      return sidebar[dir]
+  if (isObject(sidebar)) {
+    Object.keys(sidebar).forEach((dir) => {
+      if (path.startsWith(ensureStartingSlash(dir)))
+        return sidebar[dir]
+    })
   }
   return 'auto'
 }

@@ -98,7 +98,9 @@ export function isNullish(value) {
 export function isArray(value) {
   return Array.isArray(value)
 }
-
+export function isObject(value) {
+  return value !== null && typeof value === 'object'
+}
 /**
  * Remove `.md` or `.html` extention from the given path. It also converts
  * `index` to slush.
