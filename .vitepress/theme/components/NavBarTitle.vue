@@ -4,17 +4,8 @@ const { site, theme, localePath } = useData()
 </script>
 
 <template>
-  <a
-    class="nav-bar-title"
-    :href="localePath"
-    :aria-label="`${site.title}, back to home`"
-  >
-    <img
-      v-if="theme.logo"
-      class="logo"
-      :src="withBase(theme.logo)"
-      alt="Logo"
-    />
+  <a class="nav-bar-title" :href="localePath" :aria-label="`${site.title}, back to home`">
+    <img v-if="theme.logo" class="logo" :src="withBase(theme.logo)" alt="Logo" />
     {{ site.title }}
   </a>
 </template>
@@ -32,7 +23,8 @@ const { site, theme, localePath } = useData()
 
 .logo {
   margin-right: 0.75rem;
-  height: 1.3rem;
+  height: 1.7rem;
   vertical-align: bottom;
+  border-radius: 50%;
 }
 </style>

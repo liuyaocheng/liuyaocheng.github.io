@@ -16,7 +16,7 @@ const { theme } = useData()
 const pages = theme.value.pages
 const tags = new Set(pages.map(page => page.tags).flat())
 function handelTage(item: string) {
-  tagToPages.value = pages.filter(page => page.tags.includes(item))
+  tagToPages.value = pages.filter(page => page.tags?.includes(item))
 }
 </script>
 
