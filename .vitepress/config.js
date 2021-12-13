@@ -1,29 +1,29 @@
-const getPages = require("./theme/utils/pages");
-const getConfig = async () => {
+const getPages = require('../theme/utils/pages')
+const getConfig = async() => {
   return {
     head: [
       [
-        "meta",
+        'meta',
         {
-          name: "viewport",
+          name: 'viewport',
           content:
-            "width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no",
+            'width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no',
         },
       ],
-      ["meta", { name: "keywords", content: "释晨的小屋" }],
-      ["link", { rel: "icon", href: "/favicon.ico" }],
+      ['meta', { name: 'keywords', content: '释晨的小屋' }],
+      ['link', { rel: 'icon', href: '/favicon.ico' }],
     ],
-    title: "释晨的小屋",
+    title: '释晨的小屋',
     themeConfig: {
       displayAllHeaders: true,
-      logo: "/favicon.ico",
+      logo: '/favicon.ico',
       pages: await getPages(),
-      author: "释晨的小屋",
+      author: '释晨的小屋',
       search: true,
       nav: [
-        { text: "🏠 首页", link: "/" },
-        { text: "📅 归档", link: "/more/docs" },
-        { text: "📂 分类", link: "/more/tags" },
+        { text: '🏠 首页', link: '/' },
+        { text: '📅 归档', link: '/more/docs' },
+        { text: '📂 分类', link: '/more/tags' },
         // {
         //   text: "🔨 关于",
         //   items: [
@@ -34,7 +34,7 @@ const getConfig = async () => {
         // },
       ],
     },
-    dest: "public",
-  };
-};
-export default getConfig();
+    dest: 'public',
+  }
+}
+export default getConfig()

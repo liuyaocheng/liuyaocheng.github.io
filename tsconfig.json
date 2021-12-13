@@ -13,9 +13,11 @@
     "resolveJsonModule": true,
     "strictNullChecks": true,
     "forceConsistentCasingInFileNames": true,
-    "typeRoots": ["node_modules/@types", "./typings"],
-    "types": ["vite/client"]
+    "typeRoots": ["node_modules/@types", "typings"],
+    "paths": {
+      "@/": ["./"]
+    }
   },
-  "include": ["./*.ts", "vitepress/**/*.ts", "vitepress/**/*.vue"],
+  "include": ["./*.ts", ".vitepress/**/*.ts", ".vitepress/**/*.vue","typings"],
   "exclude": ["**/dist/**", "node_modules"]
 }
