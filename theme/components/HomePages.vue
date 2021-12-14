@@ -13,5 +13,6 @@ import { useRoute, useData } from 'vitepress'
 import { useNavLink } from '../composables/navLink'
 const { site, page, theme, frontmatter } = useData()
 const pages = theme.value.pages
+console.log('🚀 ~ file: HomePages.vue ~ line 16 ~ pages', pages)
 
 </script>

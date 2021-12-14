@@ -45,10 +45,10 @@ const pageClasses = computed(() => {
 </script>
 
 <template>
-  <div class="theme" :class="pageClasses">
+  <div :class="pageClasses">
     <NavBar @toggle="toggleSidebar" />
 
-    <SideBar v-if="!layout" :open="openSideBar" />
+    <SideBar v-if="showSidebar" :open="openSideBar" />
     <!-- TODO: make this button accessible -->
     <div class="sidebar-mask" @click="toggleSidebar(false)" />
 
@@ -71,6 +71,13 @@ const pageClasses = computed(() => {
 </template>
 
 <style>
+:root{
+  /* --c-brand: v-bind(color); */
+  /* --c-brand-light: v-bind(color); */
+}
+.theme{
+  /* background-color: v-bind(color); */
+}
 #ads-co #ads-container {
   margin: 0 auto;
 }

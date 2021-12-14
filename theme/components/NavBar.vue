@@ -1,11 +1,3 @@
-<script setup lang="ts">
-import NavBarTitle from './NavBarTitle.vue'
-import NavLinks from './NavLinks.vue'
-import ToggleSideBarButton from './ToggleSideBarButton.vue'
-
-defineEmits(['toggle'])
-</script>
-
 <template>
   <header class="nav-bar">
     <ToggleSideBarButton @toggle="$emit('toggle')" />
@@ -13,6 +5,10 @@ defineEmits(['toggle'])
     <NavBarTitle />
 
     <div class="flex-grow" />
+    <fluent-dark-theme-24-filled
+      class="mr-8 cursor-pointer"
+      @click="handelChangeColor"
+    />
 
     <div class="nav">
       <NavLinks />
@@ -21,7 +17,25 @@ defineEmits(['toggle'])
     <slot name="search" />
   </header>
 </template>
+<script setup lang="ts">
+import theme from '..'
+import NavBarTitle from './NavBarTitle.vue'
+import NavLinks from './NavLinks.vue'
+import ToggleSideBarButton from './ToggleSideBarButton.vue'
 
+defineEmits(['toggle'])
+
+const themeClass = ref('')
+const handelChangeColor = () => {
+  themeClass.value = themeClass.value === 'theme-light' ? 'theme-dark' : 'theme-light'
+}
+onMounted(() => {
+  watch(themeClass, (value) => {
+    window.document.getElementsByTagName('html')[0].className = value
+  })
+  themeClass.value = 'theme-light'
+})
+</script>
 <style scoped>
 .nav-bar {
   position: fixed;

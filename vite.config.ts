@@ -1,8 +1,11 @@
 import path from 'path'
 import type { UserConfig } from 'vite'
 import WindiCSS from 'vite-plugin-windicss'
-import Components, { NaiveUiResolver } from 'vite-plugin-components'
+import Components from 'unplugin-vue-components/vite'
+import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
 import AutoImport from 'unplugin-auto-import/vite'
+import Icons from 'unplugin-icons/vite'
+import IconsResolver from 'unplugin-icons/resolver'
 const config: UserConfig = {
   server: {
     port: 9527,
@@ -17,10 +20,15 @@ const config: UserConfig = {
   },
   plugins: [
     Components({
-      customComponentResolvers: [NaiveUiResolver()],
-      globalComponentsDeclaration: './typings/components.d.ts',
+      resolvers: [NaiveUiResolver(), IconsResolver({
+        componentPrefix: '',
+        // enabledCollections: ['carbon']
+      })],
+      dts: './typings/components.d.ts',
+      // globalComponentsDeclaration: './typings/components.d.ts',
       dirs: ['./components'],
       extensions: ['vue'],
+      include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
     }),
     AutoImport({
       include: [
@@ -34,6 +42,10 @@ const config: UserConfig = {
     }),
     WindiCSS({
       preflight: false,
+    }),
+    // https://github.com/antfu/unplugin-icons
+    Icons({
+      autoInstall: true,
     }),
   ],
 }

@@ -26,7 +26,6 @@ defineProps<{ open: boolean }>()
   z-index: var(--z-index-sidebar);
   border-right: 1px solid var(--c-divider);
   width: 16.4rem;
-  background-color: var(--c-bg);
   overflow-y: auto;
   transform: translateX(-100%);
   transition: transform 0.25s ease;
