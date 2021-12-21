@@ -1,14 +1,17 @@
+import type { Theme } from 'vitepress'
 import Default from './layout/Default.vue'
 import NotFound from './layout/404.vue'
 import './styles'
 import 'windi-base.css'
 import 'windi-components.css'
 import 'windi-utilities.css'
-// import Layout from "./Layout.vue";
-// import NotFound from "./NotFound.vue";
-const theme = {
+
+const theme: Theme = {
   Layout: Default,
   NotFound,
-  enhanceApp() {},
+  async enhanceApp({ app, router, siteData }) {
+    const isDark = usePreferredDark()
+    app.provide('theme', useStorage('theme', { type: isDark.value ? 'theme-dark' : 'theme-light' }))
+  },
 }
 export default theme

@@ -17,11 +17,12 @@
     "typeRoots": ["node_modules/@types", "typings"],
     "types": [
       "vite/client",
+      "node"
     ],
     "paths": {
       "@/": ["./"]
     }
   },
-  "include": ["./*.ts", ".vitepress/**/*.ts", ".vitepress/**/*.vue","typings"],
+  "include": ["./*.ts", ".vitepress/**/*.ts", ".vitepress/**/*.vue","./typings/*.d.ts"],
   "exclude": ["**/dist/**", "node_modules"]
 }

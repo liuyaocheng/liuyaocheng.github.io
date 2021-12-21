@@ -18,22 +18,23 @@
   </header>
 </template>
 <script setup lang="ts">
-import theme from '..'
 import NavBarTitle from './NavBarTitle.vue'
 import NavLinks from './NavLinks.vue'
 import ToggleSideBarButton from './ToggleSideBarButton.vue'
 
 defineEmits(['toggle'])
-
+const themeData = inject('theme')
 const themeClass = ref('')
 const handelChangeColor = () => {
-  themeClass.value = themeClass.value === 'theme-light' ? 'theme-dark' : 'theme-light'
+  const theme = themeClass.value === 'theme-light' ? 'theme-dark' : 'theme-light'
+  themeClass.value = theme
+  themeData.value.type = theme
 }
 onMounted(() => {
   watch(themeClass, (value) => {
     window.document.getElementsByTagName('html')[0].className = value
   })
-  themeClass.value = 'theme-light'
+  themeClass.value = themeData.value.type
 })
 </script>
 <style scoped>

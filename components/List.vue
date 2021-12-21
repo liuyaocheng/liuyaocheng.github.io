@@ -3,9 +3,7 @@
   <n-button type="primary" @click="handelAdd">
     Add
   </n-button>
-  <div class="bg-indigo-400 p-3 w-full">
-    {{ count }}
-  </div>
+  <n-input />
 </template>
 <script lang="ts" setup>
 const count = ref(0)

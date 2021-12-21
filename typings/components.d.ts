@@ -6,9 +6,10 @@ declare module 'vue' {
   export interface GlobalComponents {
     FluentDarkTheme24Filled: typeof import('~icons/fluent/dark-theme24-filled')['default']
     Home: typeof import('./../components/Home.vue')['default']
-    IconAccessibility: typeof import('~icons/ic/on-accessibility')['default']
     List: typeof import('./../components/List.vue')['default']
-    MdiAccount: typeof import('~icons/mdi/account')['default']
+    NButton: typeof import('naive-ui')['NButton']
+    NConfigProvider: typeof import('naive-ui')['NConfigProvider']
+    NInput: typeof import('naive-ui')['NInput']
   }
 }
 

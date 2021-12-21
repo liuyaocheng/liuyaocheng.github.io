@@ -1,6 +1,6 @@
 /** Base Styles */
 *, ::before, ::after{
-  transition: background-color .5s ease-in-out;
+  /* transition: background-color .5s ease-in-out; */
 }
 .theme-light {
   --c-white: #ffffff;
